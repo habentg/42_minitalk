@@ -6,7 +6,7 @@
 /*   By: hatesfam <hatesfam@student.abudhabi42.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:14:23 by hatesfam          #+#    #+#             */
-/*   Updated: 2023/06/16 17:37:27 by hatesfam         ###   ########.fr       */
+/*   Updated: 2023/06/17 18:17:10 by hatesfam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,10 @@ static void	send_bits(int pid, char *str)
 
 int	main(int argc, char **argv)
 {
-	int	server_pid;
-
-	server_pid = ft_atoi(argv[1]);
-	if (argc != 3 || !ft_strlen(argv[2]) || server_pid <= 0)
+	if (argc != 3 || !ft_strlen(argv[2]) || ft_atoi(argv[1]) <= 0)
 	{
 		ft_putstr_fd("Error!", 1);
 		return (1);
 	}
-	send_bits(server_pid, argv[2]);
+	send_bits(ft_atoi(argv[1]), argv[2]);
 }
